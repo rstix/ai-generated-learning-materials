@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import cors from "cors";
 // import OpenAI from "openai";
 import dotenv from "dotenv";
 import { GoogleGenerativeAI } from "@google/generative-ai";
@@ -9,13 +10,17 @@ dotenv.config();
 
 const app = express();
 
+app.use(cors({ origin: 'http://localhost:5500' }));
+
+
 // runs with every request and parses the body to json
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // serving public folder
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
-app.use(express.static(path.join(__dirname, "public")));
+// const __dirname = path.dirname(new URL(import.meta.url).pathname);
+// console.log(__dirname)
+// app.use(express.static(path.join(__dirname, "public")));
 
 // const openai = new OpenAI({
 //   apiKey: process.env.OPENAI_API_KEY,
@@ -83,8 +88,12 @@ const generateText = async (req, res) => {
 
 app.post("/question", generateText);
 
+app.get("/question", generateText);
+
 const port = process.env.PORT || 5001;
 
 app.listen(port, () => {
   console.log(`Server listenig on ${port}`);
 });
+
+// 481ee387c9d2770de52af56a00fe43a3735116f5
