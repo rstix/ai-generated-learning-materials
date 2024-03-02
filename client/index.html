@@ -4,18 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learning Materials</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handlee&display=swap"
+      rel="stylesheet"
+    />
     <link href="css/style.css" rel="stylesheet" />
     <script src="js/main.js" defer></script>
   </head>
   <body>
-    <header>
+    <header class="bg-lightGray w-full text-center text-2xl p-4 mb-8">
+      Generate Learning Materials
     </header>
 
-    <main>
-        <form id="image-form">
-          <button type="submit" class="btn">Generate</button>
+    <main class="mb-8">
+      <div class="flex flex-row mx-8 min-[1260px]:mx-auto gap-8 max-w-[1260px]">
+        <div
+          class="flex flex-col gap-3 basis-3/4 border border-lightGray rounded-sm p-4 drag-sort-enable"
+        >
+          <img
+            src="https://picsum.photos/500/300"
+            class="p-3 border border-lightGray"
+          />
+
+          <div class="p-3 border border-lightGray" id="image">
+            As a B1 level English student, embarking on a journey to Thailand
+            was an exciting adventure for Lily. With her backpack filled with
+            essentials, she set off to explore the vibrant and enchanting land
+            of smiles. Her first stop was Bangkok, the bustling capital city.
+            The streets were alive with the hustle and bustle of tuk-tuks and
+            street vendors. Lily marveled at the ornate temples, such as Wat Pho
+            and the Grand Palace, adorned with intricate designs and shimmering
+            golden spires. Venturing further, Lily traveled north to Chiang Mai,
+            a city nestled amidst lush green mountains. Here, she immersed
+            herself in Thai culture by taking a cooking class, learning to whip
+            up delicious dishes like pad Thai and green curry. Next, Lily
+            journeyed to the serene beaches of southern Thailand. With its
+            turquoise waters and powdery white sands, Phuket was a paradise
+            unlike any other. She spent her days snorkeling in crystal-clear
+            waters, admiring the colorful marine life, and basking in the warm
+            tropical sun. One of the highlights of Lily's trip was exploring the
+            ancient ruins of Ayutthaya, a UNESCO World Heritage Site. As she
+            wandered among the crumbling temples and towering pagodas, she felt
+            a sense of wonder and awe at Thailand's rich history and heritage.
+            As her journey came to an end, Lily reflected on her time in
+            Thailand with fond memories. She had learned new words and phrases,
+            experienced the warmth and hospitality of the Thai people, and
+            gained a deeper appreciation for the beauty and diversity of the
+            world. Thailand had truly captured her heart, and she knew she would
+            cherish the memories of her travels for years to come.
+          </div>
+
+          <div class="px-3 py-5 border border-lightGray" id="image">
+            <ul class="">
+              <li>Bangkok is described as a quiet and serene capital city.</li>
+              <li>
+                Phuket is depicted as a bustling city with towering skyscrapers
+              </li>
+              <li>
+                Ayutthaya is mentioned as a UNESCO World Heritage Site known for
+                its ancient ruins.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <form
+          class="basis-1/4 flex gap-2 flex-col align-middle border border-lightGray rounded-sm p-4"
+          id="image-form"
+        >
+          <input class="border border-darkBlue rounded-sm p-2" type="text" name="text" id="" placeholder="Your lesson description..." />
+          <button type="submit" class="px-8 py-3 bg-yellow rounded-md text-darkBlue">
+            Generate
+          </button>
         </form>
-          <div id="image"></div>
+      </div>
     </main>
   </body>
 </html>

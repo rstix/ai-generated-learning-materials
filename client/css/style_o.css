@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base{
+    body {
+        @apply font-indie text-xl font-light;
+    }
+}
+
+.drag-sort-active {
+	background: transparent;
+	color: transparent;
+	border: 1px solid #4ca1af;
+  }
