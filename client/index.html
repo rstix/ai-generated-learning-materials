@@ -14,21 +14,27 @@
     <script src="js/main.js" defer></script>
   </head>
   <body>
-    <header class="bg-darkBlue text-yellow w-full text-center text-2xl p-4 mb-8">
+    <header
+      class="bg-darkBlue text-yellow w-full text-center text-2xl p-4 mb-8"
+    >
       Generate Learning Materials
     </header>
 
     <main class="mb-8">
       <div class="flex flex-row mx-8 min-[1260px]:mx-auto gap-8 max-w-[1260px]">
         <div
-          class="flex flex-col gap-3 basis-3/4 border border-lightGray rounded-sm p-4 drag-sort-enable"
+          class="flex flex-col gap-3 basis-3/4 border border-lightGray rounded-sm p-4 drag-sort-enable relative"
         >
+          <div
+            id="overlay"
+            class="absolute top-0 left-0 w-full h-full bg-white/[.75]"
+          ></div>
           <img
-            src="https://picsum.photos/500/300"
-            class="p-3 border border-lightGray"
+            src="https://picsum.photos/900/300"
+            class="p-3 border-2 rounded-md border-black"
           />
 
-          <div class="p-3 border border-lightGray" id="image">
+          <div class="p-3 border-2 rounded-md border-black" id="image">
             As a B1 level English student, embarking on a journey to Thailand
             was an exciting adventure for Lily. With her backpack filled with
             essentials, she set off to explore the vibrant and enchanting land
@@ -56,26 +62,75 @@
             cherish the memories of her travels for years to come.
           </div>
 
-          <div class="px-3 py-5 border border-lightGray" id="image">
-            <ul class="">
-              <li>Bangkok is described as a quiet and serene capital city.</li>
-              <li>
-                Phuket is depicted as a bustling city with towering skyscrapers
-              </li>
-              <li>
-                Ayutthaya is mentioned as a UNESCO World Heritage Site known for
-                its ancient ruins.
-              </li>
-            </ul>
+          <div class="px-3 py-5 border-2 rounded-md border-black" id="image">
+            <div class="flex flex-col gap-2">
+              <div class="flex justify-between">
+                <span
+                  >Bangkok is described as a quiet and serene capital
+                  city.</span
+                >
+                <div class="flex gap-2 mx-2"><span>T</span><span>F</span></div>
+              </div>
+              <div class="flex justify-between">
+                <span>
+                  Phuket is depicted as a bustling city with towering
+                  skyscrapers
+                </span>
+                <div class="flex gap-2 mx-2"><span>T</span><span>F</span></div>
+              </div>
+              <div class="flex justify-between">
+                <span>
+                  Ayutthaya is mentioned as a UNESCO World Heritage Site known
+                  for its ancient ruins.
+                </span>
+                <div class="flex gap-2 mx-2"><span>T</span><span>F</span></div>
+              </div>
+            </div>
           </div>
         </div>
 
         <form
-          class="basis-1/4 flex gap-2 flex-col align-middle border border-lightGray rounded-sm p-4"
+          class="basis-1/4 flex gap-4 flex-col align-middle border border-lightGray rounded-sm p-4"
           id="image-form"
         >
-          <input class="border border-darkBlue rounded-sm p-2" type="text" name="text" id="" placeholder="Your lesson description..." />
-          <button type="submit" class="px-8 py-3 bg-yellow rounded-md text-darkBlue transition duration-1000 hover:bg-darkBlue hover:text-yellow">
+          <div class="flex justify-between items-center">
+            <label for="pic">picture</label>
+            <input
+              type="checkbox"
+              name="pic"
+              id="pic"
+              class="border-black rounded h-5 w-5"
+            />
+          </div>
+          <div class="flex justify-between items-center">
+            <label for="text">text</label>
+            <input
+              type="checkbox"
+              name="tex"
+              id="text"
+              class="border-black rounded h-5 w-5"
+            />
+          </div>
+          <div class="flex justify-between items-center">
+            <label for="questions">questions</label>
+            <input
+              type="checkbox"
+              name="questions"
+              id="questions"
+              class="border-black rounded h-5 w-5"
+            />
+          </div>
+          <textarea
+            name="custom-text"
+            id=""
+            rows="5"
+            class="border border-darkBlue rounded-sm p-2"
+            placeholder="custom query"
+          ></textarea>
+          <button
+            type="submit"
+            class="px-8 py-3 bg-yellow rounded-md text-darkBlue transition duration-1000 hover:bg-darkBlue hover:text-yellow"
+          >
             Generate
           </button>
         </form>

@@ -1,6 +1,9 @@
 function onSubmit(e) {
   e.preventDefault();
 
+  const overlay = document.querySelector('#overlay');
+
+  overlay.style.height = 0;
 //   document.querySelector(".msg").textContent = "";
 //   document.querySelector("#image").src = "";
 
@@ -38,9 +41,9 @@ async function generateImageRequest() {
     const data = await response.json();
     console.log("data:",data);
 
-    const text = data.data.text;
+    // const text = data.data.text;
 
-    document.querySelector("#image").innerHTML = text;
+    // document.querySelector("#image").innerHTML = text;
 
     // removeSpinner();
   } catch (error) {
@@ -58,9 +61,11 @@ async function generateImageRequest() {
 
 document.querySelector("#image-form").addEventListener("submit", onSubmit);
 
-/* Made with love by @fitri
- This is a component of my ReactJS project
- https://codepen.io/fitri/full/oWovYj/ */
+
+
+
+
+
 
  function enableDragSort(listClass) {
 	const sortableLists = document.getElementsByClassName(listClass);
