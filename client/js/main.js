@@ -2,8 +2,17 @@ function onSubmit(e) {
   e.preventDefault();
 
   const overlay = document.querySelector('#overlay');
-
   overlay.style.height = 0;
+
+  const matching = document.querySelector('#matching')
+  const matchingCheckbox = document.querySelector('#matching-checkbox')
+  console.log(matchingCheckbox)
+  if(matchingCheckbox.checked){
+	matching.style.display = "block"
+  }
+
+
+
 //   document.querySelector(".msg").textContent = "";
 //   document.querySelector("#image").src = "";
 
