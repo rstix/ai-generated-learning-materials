@@ -37,6 +37,13 @@ if (accordionBtns.length) {
   });
 }
 
+const addUser = document.querySelector('#addUser');
+
+addUser.addEventListener('click', () => {
+  const hiddenUser = document.querySelector('#hiddenUser');
+  hiddenUser.style.display = 'flex';
+});
+
 // function onSubmit(e) {
 //   e.preventDefault();
 

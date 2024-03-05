@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI teaching assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handlee&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="bg-darkBlue p-4">
+      <div class="max-w-screen-2xl flex justify-between mx-auto items-center">
+        <div class="text-3xl text-yellow">AI teaching assistant</div>
+        <img
+          src="./img/myAvatar.svg"
+          alt="avatar"
+          class="rounded-full w-[60px] h-[60px]"
+        />
+      </div>
+    </header>
+    <main>
+      <div id="btns" class="flex w-full mb-8">
+        <a
+          href="dashboard.html"
+          class="active:bg-black basis-1/2 p-3 flex justify-center items-center transition duration-700 cursor-pointer text-2xl hover:bg-lightGray"
+        >
+          templates
+        </a>
+        <a
+          href="students.html"
+          class="basis-1/2 p-3 flex justify-center items-center transition duration-700 cursor-pointer text-2xl hover:bg-lightGray"
+        >
+          students
+        </a>
+        <button
+          id="addUser"
+          class="px-10 transition duration-700 cursor-pointer text-2xl hover:bg-yellow hover:text-darkBlue"
+        >
+          link
+        </button>
+      </div>
+
+      <div id="templates" class="mx-auto max-w-screen-xl flex gap-4">
+        <div class="basis-3/4">
+          <div id="day_1" class="mb-6 border border-black rounded-sm">
+            <h3 class="day_1 accordion border-b text-xl p-4">DAY 1</h3>
+            <div
+              class="accordion-content flex flex-col gap-3 px-4 drag-sort-enable relative"
+            >
+              <img
+                src="https://picsum.photos/900/300"
+                class="p-3 border rounded-md border-lightGray mt-3"
+              />
+
+              <div
+                class="p-3 border rounded-md border-lightGray flex flex-col gap-2"
+                id="image"
+              >
+                <p>
+                  A journey to Thailand was an exciting adventure for Lily. With
+                  her backpack filled with essentials, she set off to explore
+                  the vibrant and enchanting land of smiles.
+                </p>
+                <p>
+                  Her first stop was Bangkok, the bustling capital city. The
+                  streets were alive with the hustle and bustle of tuk-tuks and
+                  street vendors. Lily marveled at the ornate temples, such as
+                  Wat Pho and the Grand Palace, adorned with intricate designs
+                  and shimmering golden spires.
+                </p>
+                <p>
+                  Venturing further, Lily traveled north to Chiang Mai, a city
+                  nestled amidst lush green mountains. Here, she immersed
+                  herself in Thai culture by taking a cooking class, learning to
+                  whip up delicious dishes like pad Thai and green curry.
+                </p>
+                <p>
+                  Next, Lily journeyed to the serene beaches of southern
+                  Thailand. With its turquoise waters and powdery white sands,
+                  Phuket was a paradise unlike any other. She spent her days
+                  snorkeling in crystal-clear waters, admiring the colorful
+                  marine life, and basking in the warm tropical sun.
+                </p>
+                <p>
+                  One of the highlights of Lily's trip was exploring the ancient
+                  ruins of Ayutthaya, a UNESCO World Heritage Site. As she
+                  wandered among the crumbling temples and towering pagodas, she
+                  felt a sense of wonder and awe at Thailand's rich history and
+                  heritage.
+                </p>
+                <p>
+                  As her journey came to an end, Lily reflected on her time in
+                  Thailand with fond memories. She had learned new words and
+                  phrases, experienced the warmth and hospitality of the Thai
+                  people, and gained a deeper appreciation for the beauty and
+                  diversity of the world. Thailand had truly captured her heart,
+                  and she knew she would cherish the memories of her travels for
+                  years to come.
+                </p>
+              </div>
+
+              <div
+                class="px-3 py-5 border rounded-md border-lightGray"
+                id="image"
+              >
+                <h3 class="mb-2 text-2xl">True/False</h3>
+                <div class="flex flex-col gap-2">
+                  <div class="flex justify-between">
+                    <span
+                      >Bangkok is described as a quiet and serene capital
+                      city.</span
+                    >
+                    <div class="flex gap-2 mx-2">
+                      <span>T</span><span>F</span>
+                    </div>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>
+                      Phuket is depicted as a bustling city with towering
+                      skyscrapers
+                    </span>
+                    <div class="flex gap-2 mx-2">
+                      <span>T</span><span>F</span>
+                    </div>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>
+                      Ayutthaya is mentioned as a UNESCO World Heritage Site
+                      known for its ancient ruins.
+                    </span>
+                    <div class="flex gap-2 mx-2">
+                      <span>T</span><span>F</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="matching"
+                class="p-3 border rounded-md border-lightGray mb-3"
+              >
+                <h3 class="mb-2 text-2xl">Match words with the meaning</h3>
+                <div class="flex gap-4">
+                  <div class="basis-1/3">
+                    <div>bustling</div>
+                    <div>immerse</div>
+                    <div>enchanting</div>
+                    <div>marvel</div>
+                    <div>vibrant</div>
+                  </div>
+                  <div class="basis-2/3">
+                    <div>delightfully charming or captivating</div>
+                    <div>full of activity and energy</div>
+                    <div>to involve deeply in an activity or experience</div>
+                    <div>full of life and color</div>
+                    <div>to be amazed or astonished</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="day_2" class="mb-6 border border-black rounded-sm">
+            <h3 class="accordion border-b text-xl p-4">DAY 2</h3>
+            <div
+              class="accordion-content flex flex-col gap-3 px-4 drag-sort-enable relative"
+            >
+              <img
+                src="https://picsum.photos/900/300"
+                class="p-3 border rounded-md border-lightGray mt-3"
+              />
+
+              <div
+                class="p-3 border rounded-md border-lightGray flex flex-col gap-2"
+                id="image"
+              >
+                <p>
+                  A journey to Thailand was an exciting adventure for Lily. With
+                  her backpack filled with essentials, she set off to explore
+                  the vibrant and enchanting land of smiles.
+                </p>
+                <p>
+                  Her first stop was Bangkok, the bustling capital city. The
+                  streets were alive with the hustle and bustle of tuk-tuks and
+                  street vendors. Lily marveled at the ornate temples, such as
+                  Wat Pho and the Grand Palace, adorned with intricate designs
+                  and shimmering golden spires.
+                </p>
+                <p>
+                  Venturing further, Lily traveled north to Chiang Mai, a city
+                  nestled amidst lush green mountains. Here, she immersed
+                  herself in Thai culture by taking a cooking class, learning to
+                  whip up delicious dishes like pad Thai and green curry.
+                </p>
+                <p>
+                  Next, Lily journeyed to the serene beaches of southern
+                  Thailand. With its turquoise waters and powdery white sands,
+                  Phuket was a paradise unlike any other. She spent her days
+                  snorkeling in crystal-clear waters, admiring the colorful
+                  marine life, and basking in the warm tropical sun.
+                </p>
+                <p>
+                  One of the highlights of Lily's trip was exploring the ancient
+                  ruins of Ayutthaya, a UNESCO World Heritage Site. As she
+                  wandered among the crumbling temples and towering pagodas, she
+                  felt a sense of wonder and awe at Thailand's rich history and
+                  heritage.
+                </p>
+                <p>
+                  As her journey came to an end, Lily reflected on her time in
+                  Thailand with fond memories. She had learned new words and
+                  phrases, experienced the warmth and hospitality of the Thai
+                  people, and gained a deeper appreciation for the beauty and
+                  diversity of the world. Thailand had truly captured her heart,
+                  and she knew she would cherish the memories of her travels for
+                  years to come.
+                </p>
+              </div>
+
+              <div
+                class="px-3 py-5 border rounded-md border-lightGray"
+                id="image"
+              >
+                <h3 class="mb-2 text-2xl">True/False</h3>
+                <div class="flex flex-col gap-2">
+                  <div class="flex justify-between">
+                    <span
+                      >Bangkok is described as a quiet and serene capital
+                      city.</span
+                    >
+                    <div class="flex gap-2 mx-2">
+                      <span>T</span><span>F</span>
+                    </div>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>
+                      Phuket is depicted as a bustling city with towering
+                      skyscrapers
+                    </span>
+                    <div class="flex gap-2 mx-2">
+                      <span>T</span><span>F</span>
+                    </div>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>
+                      Ayutthaya is mentioned as a UNESCO World Heritage Site
+                      known for its ancient ruins.
+                    </span>
+                    <div class="flex gap-2 mx-2">
+                      <span>T</span><span>F</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="matching"
+                class="p-3 border rounded-md border-lightGray mb-3"
+              >
+                <h3 class="mb-2 text-2xl">Match words with the meaning</h3>
+                <div class="flex gap-4">
+                  <div class="basis-1/3">
+                    <div>bustling</div>
+                    <div>immerse</div>
+                    <div>enchanting</div>
+                    <div>marvel</div>
+                    <div>vibrant</div>
+                  </div>
+                  <div class="basis-2/3">
+                    <div>delightfully charming or captivating</div>
+                    <div>full of activity and energy</div>
+                    <div>to involve deeply in an activity or experience</div>
+                    <div>full of life and color</div>
+                    <div>to be amazed or astonished</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="basis-1/4">
+          <div
+            class="flex flex-col gap-3 items-center border border-black rounded-sm p-4"
+          >
+            <img
+              class="rounded-full w-[160px]"
+              src="./img/student1.svg"
+              alt=""
+            />
+            <h4>Abigail Ava Taylor</h4>
+            <div class="flex flex-col items-center">
+              <h4 class="text-xs">INTERESTS:</h4>
+              <div class="flex gap-2 flex-wrap text-sm justify-center">
+                <span>Photography</span><span>Hiking</span><span>Cooking</span
+                ><span>Playing musical instruments</span><span>Gardening</span>
+              </div>
+            </div>
+            <div class="flex flex-col items-center">
+              <h4 class="text-xs">COUNTRY:</h4>
+              <div class="flex gap-2 flex-wrap text-sm justify-center">
+                Spain
+              </div>
+            </div>
+            <div class="flex flex-col items-center">
+              <h4 class="text-xs">AGE:</h4>
+              <div class="flex gap-2 flex-wrap text-sm justify-center">
+                25-30
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
