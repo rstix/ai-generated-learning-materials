@@ -602,6 +602,10 @@ body {
   margin-top: 0.75rem;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
 .flex {
   display: flex;
 }
@@ -852,6 +856,10 @@ body {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.font-medium {
+  font-weight: 500;
 }
 
 .text-darkBlue {
