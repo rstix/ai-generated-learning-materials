@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI teaching assistant</title>
+    <title>scolAIre</title>
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,9 +15,12 @@
     <script src="js/main.js" defer></script>
   </head>
   <body>
-    <header class="bg-darkBlue p-4">
+    <header class="bg-[#059bb7] p-4">
       <div class="max-w-screen-2xl flex justify-between mx-auto items-center">
-        <div class="text-3xl text-yellow">AI teaching assistant</div>
+        <div class="flex items-end">
+          <img class="h-[80px]" src="./img/scolaire_logo.png" alt="" />
+          <h1 class="mb-[5px] font-normal text-2xl text-white">scolAIre</h1>
+        </div>
         <img
           src="./img/myAvatar.svg"
           alt="avatar"
@@ -28,37 +32,143 @@
       <div id="btns" class="flex w-full mb-8">
         <a
           href="dashboard.html"
-          class="active:bg-black basis-1/2 p-3 flex justify-center items-center transition duration-700 cursor-pointer text-2xl hover:bg-lightGray"
+          class="active:bg-black basis-1/2 p-3 flex justify-center items-center transition duration-700 cursor-pointer text-2xl bg-lightGray hover:bg-white"
         >
-          templates
+          Templates
         </a>
         <a
           href="students.html"
-          class="basis-1/2 p-3 flex justify-center items-center transition duration-700 cursor-pointer text-2xl hover:bg-lightGray"
+          class="basis-1/2 p-3 flex justify-center items-center transition duration-700 cursor-pointer text-2xl bg-lightGray hover:bg-white"
         >
-          students
+          Students
         </a>
-        <button
-          id="addUser"
-          class="px-10 transition duration-700 cursor-pointer text-2xl hover:bg-yellow hover:text-darkBlue"
-        >
-          link
-        </button>
       </div>
 
-      <div class="flex mx-auto max-w-screen-lg gap-7">
-        <a href="student_1.html" class="flex flex-col gap-3 items-center">
-          <img class="rounded-full w-[160px]" src="./img/student1.svg" alt="" />
-          <h4>Abigail Ava Taylor</h4>
-        </a>
-        <a
-          id="hiddenUser"
-          href="student_2.html"
-          class="flex-col gap-3 items-center hidden"
-        >
-          <img class="rounded-full w-[160px]" src="./img/student2.svg" alt="" />
-          <h4>Oliver Johnson</h4>
-        </a>
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="text-2xl font-medium text-darkBlue mb-4">1:1 lessons</h2>
+        <div class="flex gap-8 mb-10">
+          <a href="student_1.html" class="flex flex-col gap-3 items-center">
+            <img
+              class="rounded-full w-[160px]"
+              src="./img/student1.svg"
+              alt=""
+            />
+            <h4>Abigail Ava Taylor</h4>
+          </a>
+          <a
+            id="hiddenUser"
+            href="student_2.html"
+            class="flex-col gap-3 items-center hidden"
+          >
+            <img
+              class="rounded-full w-[160px]"
+              src="./img/student2.svg"
+              alt=""
+            />
+            <h4>Oliver Johnson</h4>
+          </a>
+          <div>
+            <button
+              id="addUser"
+              class="mt-[40px] ml-[20px] flex flex-col justify-center items-center transition duration-700 cursor-pointer w-[80px] h-[80px] hover:bg-yellow hover:text-darkBlue border rounded-full"
+            >
+              <img class="w-[40px]" src="./img/plus.png" alt="" />
+            </button>
+          </div>
+          <div
+            id="my-modal"
+            class="fixed top-0 left-0 w-full h-full bg-black/70 hidden items-center justify-center"
+          >
+            <div
+              class="flex p-6 px-10 bg-white flex-col min-w-[400px] border rounded-md"
+            >
+              <p>Share this link with your student:</p>
+              <div class="flex my-4">
+                <input
+                  type="text"
+                  class="border w-full text-sm p-2 rounded-l-sm"
+                  value="www.teaching-assist.com/new-student"
+                /><button
+                  class="border border-l-0 rounded-r-sm px-2 py-1 animation duration-500 hover:bg-lightGray"
+                >
+                  <img class="h-[20px]" src="./img/copy.png" alt="" />
+                </button>
+              </div>
+              <button
+                class="close border rounded-sm self-end w-[120px] animation duration-500 hover:bg-yellow"
+              >
+                close
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-medium text-darkBlue mb-4">Group classes</h2>
+        <div class="flex items-center gap-8">
+          <div class="border rounded-sm border-[#9c9c9c]">
+            <div
+              class="text-center px-8 border-b border-[#9c9c9c] text-2xl py-12"
+            >
+              A1.1 - Mon & Wed @ 18:00
+            </div>
+            <div class="relative px-4 py-6 flex -z-10 gap-2">
+              <img class="rounded-full w-[50px]" src="./img/student1.svg" />
+              <!---->
+              <img
+                class="rounded-full w-[50px] -z-10 left-[50px] top-0 absolutee"
+                src="./img/student2.svg"
+              />
+              <img
+                class="rounded-full w-[50px] -z-20 left-[100px] top-[0px] absolutee"
+                src="./img/student3.jpeg"
+              />
+              <!---->
+              <!--
+              <div
+                class="rounded-full border w-[120px] h-[120px] -z-10 left-[40px] top-[0px] absolute bg-lightGray"
+              ></div>
+              <div
+                class="rounded-full border w-[120px] h-[120px] -z-20 left-[80px] top-[0px] absolute bg-lightGray"
+              ></div>
+              -->
+            </div>
+          </div>
+
+          <div>
+            <button
+              id="addClass"
+              class="ml-[20px] flex flex-col justify-center items-center transition duration-700 cursor-pointer w-[80px] h-[80px] hover:bg-yellow hover:text-darkBlue border rounded-full"
+            >
+              <img class="w-[40px]" src="./img/plus.png" alt="" />
+            </button>
+          </div>
+          <div
+            id="my-modal"
+            class="fixed top-0 left-0 w-full h-full bg-black/70 hidden items-center justify-center"
+          >
+            <div
+              class="flex p-6 px-10 bg-white flex-col min-w-[400px] border rounded-md"
+            >
+              <p>Share this link with your student:</p>
+              <div class="flex my-4">
+                <input
+                  type="text"
+                  class="border w-full text-sm p-2 rounded-l-sm"
+                  value="www.teaching-assist.com/new-student"
+                /><button
+                  class="border border-l-0 rounded-r-sm px-2 py-1 animation duration-500 hover:bg-lightGray"
+                >
+                  <img class="h-[20px]" src="./img/copy.png" alt="" />
+                </button>
+              </div>
+              <button
+                class="close border rounded-sm self-end w-[120px] animation duration-500 hover:bg-yellow"
+              >
+                close
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </body>

@@ -2,14 +2,12 @@ const removeStylesFromElements = (elements) => {
   elements.forEach((e) => e.removeAttribute('style'));
 };
 
-// btns[0].style.background = '#e5e5e5';
-
 const btns = document.querySelectorAll('#btns a');
 
 btns.forEach((e) => {
   if (location.pathname.includes(e.getAttribute('href'))) {
-    console.log(location.pathname);
-    e.style.background = '#e5e5e5';
+    e.style.background = '#fff';
+    e.style.fontWeight = '500';
   }
 });
 
@@ -27,21 +25,70 @@ const openAccordion = (accordion) => {
 
 const accordionBtns = document.querySelectorAll('.accordion');
 
+const closeAccordions = () => accordionBtns.forEach((a) => openAccordion(a));
+
 if (accordionBtns.length) {
   setTimeout(() => {
     openAccordion(accordionBtns[0]);
   }, 800);
 
   accordionBtns.forEach((accordion) => {
-    accordion.addEventListener('click', () => openAccordion(accordion));
+    accordion.addEventListener('click', (e) => {
+      if (e.target.classList.contains('print')) return;
+      openAccordion(accordion);
+    });
   });
 }
 
 const addUser = document.querySelector('#addUser');
 
-addUser.addEventListener('click', () => {
-  const hiddenUser = document.querySelector('#hiddenUser');
+// addUser.addEventListener('click', () => {
+//   const hiddenUser = document.querySelector('#hiddenUser');
+//
+// });
+
+const modal = document.querySelector('#my-modal');
+const modalBtn = document.querySelector('#addUser');
+const closeBtn = document.querySelector('.close');
+
+// Events
+if (modalBtn) {
+  modalBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  window.addEventListener('click', outsideClick);
+}
+
+// Open
+function openModal() {
+  modal.style.display = 'flex';
+}
+
+// Close
+function closeModal() {
+  modal.style.display = 'none';
   hiddenUser.style.display = 'flex';
+}
+
+// Close If Outside Click
+function outsideClick(e) {
+  if (e.target == modal) {
+    closeModal();
+  }
+}
+
+const continueBtns = document.querySelectorAll('.continue');
+
+continueBtns.forEach((b) => {
+  b.addEventListener('click', () => {
+    const lesson = b.closest('.lesson');
+
+    openAccordion(lesson.querySelector('.accordion'));
+    b.style.display = 'none';
+    openAccordion(lesson.nextElementSibling.querySelector('.accordion'));
+
+    lesson.nextElementSibling.querySelector('.continue').style.display =
+      'block';
+  });
 });
 
 // function onSubmit(e) {
@@ -114,38 +161,48 @@ addUser.addEventListener('click', () => {
 
 // document.querySelector("#image-form").addEventListener("submit", onSubmit);
 
-//  function enableDragSort(listClass) {
-// 	const sortableLists = document.getElementsByClassName(listClass);
-// 	Array.prototype.map.call(sortableLists, (list) => {enableDragList(list)});
+// function enableDragSort(listClass) {
+//   const sortableLists = document.getElementsByClassName(listClass);
+//   Array.prototype.map.call(sortableLists, (list) => {
+//     enableDragList(list);
+//   });
+// }
+
+// function enableDragList(list) {
+//   Array.prototype.map.call(list.children, (item) => {
+//     enableDragItem(item);
+//   });
+// }
+
+// function enableDragItem(item) {
+//   item.setAttribute('draggable', true);
+//   item.ondrag = handleDrag;
+//   item.ondragend = handleDrop;
+// }
+
+// function handleDrag(item) {
+//   const selectedItem = item.target,
+//     list = selectedItem.parentNode,
+//     x = event.clientX,
+//     y = event.clientY;
+
+//   selectedItem.classList.add('drag-sort-active');
+//   let swapItem =
+//     document.elementFromPoint(x, y) === null
+//       ? selectedItem
+//       : document.elementFromPoint(x, y);
+
+//   if (list === swapItem.parentNode) {
+//     swapItem =
+//       swapItem !== selectedItem.nextSibling ? swapItem : swapItem.nextSibling;
+//     list.insertBefore(selectedItem, swapItem);
 //   }
+// }
 
-//   function enableDragList(list) {
-// 	Array.prototype.map.call(list.children, (item) => {enableDragItem(item)});
-//   }
+// function handleDrop(item) {
+//   item.target.classList.remove('drag-sort-active');
+// }
 
-//   function enableDragItem(item) {
-// 	item.setAttribute('draggable', true)
-// 	item.ondrag = handleDrag;
-// 	item.ondragend = handleDrop;
-//   }
-
-//   function handleDrag(item) {
-// 	const selectedItem = item.target,
-// 		  list = selectedItem.parentNode,
-// 		  x = event.clientX,
-// 		  y = event.clientY;
-
-// 	selectedItem.classList.add('drag-sort-active');
-// 	let swapItem = document.elementFromPoint(x, y) === null ? selectedItem : document.elementFromPoint(x, y);
-
-// 	if (list === swapItem.parentNode) {
-// 	  swapItem = swapItem !== selectedItem.nextSibling ? swapItem : swapItem.nextSibling;
-// 	  list.insertBefore(selectedItem, swapItem);
-// 	}
-//   }
-
-//   function handleDrop(item) {
-// 	item.target.classList.remove('drag-sort-active');
-//   }
-
-//   (()=> {enableDragSort('drag-sort-enable')})();
+// (() => {
+//   enableDragSort('drag-sort-enable');
+// })();
