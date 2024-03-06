@@ -19,6 +19,9 @@
     overflow: hidden;
     transition: max-height 0.8s ease-in-out;
 }
+/* body{
+    padding-bottom: 20px;
+} */
 
 /* .day_1 .accordion-content {
     max-height: 100%;
