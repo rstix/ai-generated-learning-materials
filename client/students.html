@@ -51,7 +51,7 @@
         <div class="flex gap-8 mb-8 pb-8 border-b border-[#898989]">
           <a href="student_1.html" class="flex flex-col gap-3 items-center">
             <img
-              class="rounded-full w-[160px]"
+              class="rounded-full w-[120px]"
               src="./img/student1.svg"
               alt=""
             />
@@ -63,7 +63,7 @@
             class="flex-col gap-3 items-center hidden"
           >
             <img
-              class="rounded-full w-[160px]"
+              class="rounded-full w-[120px]"
               src="./img/student2.svg"
               alt=""
             />
@@ -72,7 +72,7 @@
           <div>
             <button
               id="addUser"
-              class="mt-[40px] ml-[20px] flex flex-col justify-center items-center transition duration-700 cursor-pointer w-[80px] h-[80px] hover:bg-yellow hover:text-darkBlue border rounded-full"
+              class="addUser mt-[40px] ml-[20px] flex flex-col justify-center items-center transition duration-700 cursor-pointer w-[80px] h-[80px] hover:bg-yellow hover:text-darkBlue border rounded-full"
             >
               <img class="w-[40px]" src="./img/plus.png" alt="" />
             </button>
@@ -84,7 +84,7 @@
             <div
               class="flex p-6 px-10 bg-white flex-col min-w-[400px] border rounded-md"
             >
-              <p>Share this link with your student:</p>
+              <p>Share this link to invite your students:</p>
               <div class="flex my-4">
                 <input
                   type="text"
@@ -124,34 +124,43 @@
                 class="rounded-full w-[50px] -z-20 left-[100px] top-[0px] absolutee"
                 src="./img/student3.jpeg"
               />
-              <!---->
-              <!--
-              <div
-                class="rounded-full border w-[120px] h-[120px] -z-10 left-[40px] top-[0px] absolute bg-lightGray"
-              ></div>
-              <div
-                class="rounded-full border w-[120px] h-[120px] -z-20 left-[80px] top-[0px] absolute bg-lightGray"
-              ></div>
-              -->
             </div>
           </div>
 
-          <div>
-            <button
-              id="addClass"
-              class="ml-[20px] flex flex-col justify-center items-center transition duration-700 cursor-pointer w-[80px] h-[80px] hover:bg-yellow hover:text-darkBlue border rounded-full"
-            >
-              <img class="w-[40px]" src="./img/plus.png" alt="" />
-            </button>
-          </div>
           <div
-            id="my-modal"
+            id="hiddenClass"
+            class="border rounded-sm border-[#9c9c9c] hidden flex-col"
+          >
+            <div
+              class="text-center px-8 border-b border-[#9c9c9c] text-2xl py-12"
+            >
+              B2.1 - Tue & Thu @ 9:00
+            </div>
+            <div class="relative px-4 py-6 flex -z-10 gap-2">
+              <img class="rounded-full w-[50px]" src="./img/student1.svg" />
+              <!---->
+              <img
+                class="rounded-full w-[50px] -z-20 left-[100px] top-[0px] absolutee"
+                src="./img/student3.jpeg"
+              />
+            </div>
+          </div>
+
+          <button
+            id="addClass"
+            class="ml-[20px] flex flex-col justify-center items-center transition duration-700 cursor-pointer w-[80px] h-[80px] hover:bg-yellow hover:text-darkBlue border rounded-full"
+          >
+            <img class="w-[40px]" src="./img/plus.png" alt="" />
+          </button>
+
+          <div
+            id="my-modal2"
             class="fixed top-0 left-0 w-full h-full bg-black/70 hidden items-center justify-center"
           >
             <div
               class="flex p-6 px-10 bg-white flex-col min-w-[400px] border rounded-md"
             >
-              <p>Share this link with your student:</p>
+              <p>Share this link to invite your students:</p>
               <div class="flex my-4">
                 <input
                   type="text"
@@ -164,7 +173,7 @@
                 </button>
               </div>
               <button
-                class="close border rounded-sm self-end w-[120px] animation duration-500 hover:bg-yellow"
+                class="close2 border rounded-sm self-end w-[120px] animation duration-500 hover:bg-yellow"
               >
                 close
               </button>

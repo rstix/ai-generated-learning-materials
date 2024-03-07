@@ -40,31 +40,45 @@ if (accordionBtns.length) {
   });
 }
 
-const addUser = document.querySelector('#addUser');
+// const addUser = document.querySelector('.addUser');
 
 // addUser.addEventListener('click', () => {
-//   const hiddenUser = document.querySelector('#hiddenUser');
+//
 //
 // });
 
+const hiddenUser = document.querySelector('#hiddenUser');
+
 const modal = document.querySelector('#my-modal');
 const modalBtn = document.querySelector('#addUser');
+
 const closeBtn = document.querySelector('.close');
 
 // Events
 if (modalBtn) {
-  modalBtn.addEventListener('click', openModal);
-  closeBtn.addEventListener('click', closeModal);
-  window.addEventListener('click', outsideClick);
+  modalBtn.addEventListener('click', () => openModal(modal));
+  closeBtn.addEventListener('click', () => closeModal(modal, hiddenUser));
+  window.addEventListener('click', () => outsideClick(modal));
+}
+
+const modalBtn2 = document.querySelector('#addClass');
+const modal2 = document.querySelector('#my-modal2');
+const closeBtn2 = document.querySelector('.close2');
+const hiddenClass = document.querySelector('#hiddenClass');
+
+if (modalBtn2) {
+  modalBtn2.addEventListener('click', () => openModal(modal2));
+  closeBtn2.addEventListener('click', () => closeModal(modal2, hiddenClass));
+  window.addEventListener('click', () => outsideClick(modal2));
 }
 
 // Open
-function openModal() {
+function openModal(modal) {
   modal.style.display = 'flex';
 }
 
 // Close
-function closeModal() {
+function closeModal(modal, hiddenUser) {
   modal.style.display = 'none';
   hiddenUser.style.display = 'flex';
 }
